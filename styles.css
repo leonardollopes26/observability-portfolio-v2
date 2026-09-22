@@ -660,6 +660,21 @@ img {
         linear-gradient(135deg, #f7fcfa, #ffffff);
 }
 
+.project-card-food {
+    border-color: rgba(249, 115, 22, 0.32);
+    box-shadow: 0 28px 80px rgba(124, 45, 18, 0.16);
+}
+
+.project-card-food .project-badge {
+    color: #fb923c;
+    border-color: rgba(249, 115, 22, 0.35);
+    background: rgba(249, 115, 22, 0.08);
+}
+
+.screenshots-grid-single {
+    grid-template-columns: minmax(0, 1fr);
+}
+
 
 /* =========================================================
    ARCHITECTURE

@@ -427,7 +427,86 @@
         </div>
 
         <div class="project-divider">
-            <span>API MONITORING PROJECT</span>
+            <span>FOOD ORDER OBSERVABILITY</span>
+        </div>
+
+        <div class="project-card project-card-food">
+
+            <div class="project-info">
+                <span class="project-badge">OPENSHIFT · E-COMMERCE SIMULATION</span>
+                <h2>Food Order Observability Lab</h2>
+
+                <p>
+                    Online food-ordering simulator built to demonstrate a complete
+                    observability workflow with realistic orders, failures, revenue,
+                    latency and delivery-stage telemetry.
+                </p>
+
+                <p>
+                    The FastAPI service runs in a Kubernetes <strong>Pod on Red Hat
+                    OpenShift</strong>, exposed by a Service and Route. An OpenShift
+                    <strong>CronJob generates traffic every five minutes</strong> so
+                    the Grafana dashboard continues receiving useful lab data.
+                </p>
+
+                <ul class="project-features">
+                    <li>Accepted orders, failures, revenue and end-to-end P95 latency</li>
+                    <li>Payment, kitchen and delivery stage latency</li>
+                    <li>Structured application logs correlated by TraceID</li>
+                    <li>Distributed traces exported through OpenTelemetry</li>
+                    <li>Prometheus metrics, Loki logs and Tempo traces in Grafana</li>
+                    <li>Automated traffic generation with an OpenShift CronJob</li>
+                    <li>Containerized deployment with Deployment, Pod, Service and Route</li>
+                </ul>
+
+                <div class="project-tags">
+                    <span>OpenShift</span><span>Kubernetes</span><span>Pods</span>
+                    <span>CronJob</span><span>FastAPI</span><span>Python</span>
+                    <span>OpenTelemetry</span><span>Prometheus</span>
+                    <span>Loki</span><span>Tempo</span><span>Grafana</span>
+                </div>
+
+                <a class="btn btn-primary"
+                   href="https://github.com/leonardollopes26/food-order-observability-lab"
+                   target="_blank" rel="noopener noreferrer">
+                    View project on GitHub →
+                </a>
+            </div>
+
+            <div class="architecture-card">
+                <p class="architecture-title">Food Order Architecture</p>
+                <div class="architecture-flow">
+                    <div class="architecture-node">OpenShift CronJob<small>SYNTHETIC TRAFFIC · EVERY 5 MINUTES</small></div>
+                    <span>↓ HTTP REQUESTS</span>
+                    <div class="architecture-node">FastAPI Food Order Service<small>DEPLOYMENT · POD · SERVICE · ROUTE</small></div>
+                    <span>↓ OTLP</span>
+                    <div class="architecture-node architecture-highlight">OpenTelemetry Collector</div>
+                    <span>↓</span>
+                    <div class="architecture-backends">
+                        <div><strong>Prometheus</strong><small>METRICS</small></div>
+                        <div><strong>Loki</strong><small>LOGS</small></div>
+                        <div><strong>Tempo</strong><small>TRACES</small></div>
+                    </div>
+                    <span>↓</span>
+                    <div class="architecture-node grafana-node">Grafana<small>ORDERS · ERRORS · REVENUE · LATENCY</small></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="screenshots-grid screenshots-grid-single">
+            <figure class="screenshot-card">
+                <a href="./images/food.png" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/food.png" alt="Food Order observability dashboard in Grafana">
+                </a>
+                <figcaption>
+                    <strong>Grafana — Food Order Observability</strong>
+                    <span>Orders, errors, revenue, P95 latency, stage performance and correlated logs.</span>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="project-divider">
+            <span>NASA NEO API MONITORING</span>
         </div>
 
         <div class="project-card project-card-monitoring">
@@ -549,6 +628,28 @@
 
             </div>
 
+        </div>
+
+        <div class="screenshots-grid">
+            <figure class="screenshot-card">
+                <a href="./images/api_meteoro.png" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/api_meteoro.png" alt="NASA NEO API monitoring dashboard in Grafana">
+                </a>
+                <figcaption>
+                    <strong>Grafana — NASA NEO API Monitoring</strong>
+                    <span>Velocity, diameter, Earth distance, hazardous objects and JPL Sentry scenarios.</span>
+                </figcaption>
+            </figure>
+
+            <figure class="screenshot-card">
+                <a href="./images/api_meteoro_openshift.png" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/api_meteoro_openshift.png" alt="NASA NEO API application topology on Red Hat OpenShift">
+                </a>
+                <figcaption>
+                    <strong>Red Hat OpenShift — Application Topology</strong>
+                    <span>BuildConfig, Deployment, Pod, Service and Route running alongside the observability stack.</span>
+                </figcaption>
+            </figure>
         </div>
 
         <div class="monitoring-preview" aria-label="NASA NEO monitoring coverage">
