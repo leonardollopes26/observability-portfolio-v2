@@ -632,6 +632,34 @@ img {
     font-size: 11px;
 }
 
+.project-divider {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 68px;
+}
+
+.project-divider::before,
+.project-divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: var(--border);
+}
+
+.project-divider span {
+    color: var(--primary-dark);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+}
+
+.project-card-monitoring {
+    background:
+        radial-gradient(circle at top right, rgba(11, 168, 120, 0.11), transparent 38%),
+        linear-gradient(135deg, #f7fcfa, #ffffff);
+}
+
 
 /* =========================================================
    ARCHITECTURE
@@ -686,6 +714,14 @@ img {
     font-weight: 700;
 }
 
+.architecture-node small {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-light);
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
 .architecture-highlight {
     border-color:
         rgba(11, 168, 120, 0.55);
@@ -732,6 +768,119 @@ img {
 .grafana-node {
     border-color:
         rgba(11, 168, 120, 0.45);
+}
+
+.source-backends {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+/* =========================================================
+   API MONITORING PREVIEW
+========================================================= */
+
+.monitoring-preview {
+    margin-top: 25px;
+    padding: 28px;
+    overflow: hidden;
+    border: 1px solid #17343c;
+    border-radius: var(--radius);
+    background:
+        radial-gradient(circle at 90% 10%, rgba(11, 168, 120, 0.20), transparent 30%),
+        #071418;
+    color: white;
+    box-shadow: 0 16px 38px rgba(7, 20, 24, 0.14);
+}
+
+.monitoring-preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 22px;
+}
+
+.monitoring-preview-header div span,
+.monitoring-preview-header div strong,
+.monitoring-metrics span,
+.monitoring-metrics strong,
+.monitoring-metrics small {
+    display: block;
+}
+
+.monitoring-preview-header div span {
+    margin-bottom: 5px;
+    color: #65d9b2;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.monitoring-preview-header div strong {
+    font-size: 21px;
+}
+
+.monitoring-status {
+    color: #65d9b2;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.monitoring-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.monitoring-metrics article {
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.monitoring-metrics span {
+    color: #65d9b2;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.monitoring-metrics strong {
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+.monitoring-metrics small {
+    margin-top: 6px;
+    color: #8ea8b0;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.monitoring-note {
+    margin-top: 18px;
+    color: #8ea8b0;
+    font-size: 11px;
+}
+
+.platform-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 18px;
+}
+
+.platform-strip span {
+    padding: 6px 9px;
+    border: 1px solid rgba(101, 217, 178, 0.24);
+    border-radius: 5px;
+    background: rgba(101, 217, 178, 0.06);
+    color: #65d9b2;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
 }
 
 
@@ -1291,6 +1440,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .monitoring-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .contact-grid {
         align-items: flex-start;
         flex-direction: column;
@@ -1389,6 +1542,15 @@ footer {
     }
 
     .architecture-backends {
+        grid-template-columns: 1fr;
+    }
+
+    .monitoring-preview-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .monitoring-metrics {
         grid-template-columns: 1fr;
     }
 

@@ -426,6 +426,177 @@
 
         </div>
 
+        <div class="project-divider">
+            <span>API MONITORING PROJECT</span>
+        </div>
+
+        <div class="project-card project-card-monitoring">
+
+            <div class="project-info">
+
+                <span class="project-badge">OPENSHIFT · NASA/JPL DATA</span>
+
+                <h2>NASA NEO API Monitoring Lab</h2>
+
+                <p>
+                    Independent API monitoring project that transforms live
+                    NASA NeoWs and JPL Sentry data into operational telemetry
+                    for near-Earth object analysis.
+                </p>
+
+                <p>
+                    The application runs on <strong>Red Hat OpenShift</strong>
+                    and exports metrics, structured logs and distributed traces
+                    through OpenTelemetry to a unified Grafana experience.
+                </p>
+
+                <p>
+                    The delivery workflow uses a Dockerfile-based OpenShift
+                    <strong>BuildConfig</strong>, with the service running in a
+                    Kubernetes <strong>Pod</strong> managed by a Deployment and
+                    exposed through a Service and secure Route.
+                </p>
+
+                <ul class="project-features">
+                    <li>Relative velocity, estimated diameter and Earth miss distance</li>
+                    <li>Potentially hazardous asteroid classification</li>
+                    <li>JPL Sentry impact scenarios, probability and potential dates</li>
+                    <li>Prometheus metrics with per-object dimensional attributes</li>
+                    <li>Structured logs in Loki and distributed traces in Tempo</li>
+                    <li>Automated five-minute refresh and OpenShift health probes</li>
+                    <li>API key injection through an OpenShift Secret</li>
+                    <li>Container build, rollout and lifecycle management on Kubernetes</li>
+                </ul>
+
+                <div class="project-tags">
+                    <span>OpenShift</span>
+                    <span>Kubernetes</span>
+                    <span>Pods</span>
+                    <span>Deployment</span>
+                    <span>BuildConfig</span>
+                    <span>Service &amp; Route</span>
+                    <span>Secrets</span>
+                    <span>OpenTelemetry</span>
+                    <span>Grafana</span>
+                    <span>Prometheus</span>
+                    <span>Loki</span>
+                    <span>Tempo</span>
+                    <span>FastAPI</span>
+                    <span>Python</span>
+                    <span>NASA NeoWs</span>
+                    <span>JPL Sentry</span>
+                </div>
+
+                <a
+                    class="btn btn-primary"
+                    href="https://github.com/leonardollopes26/nasa-neo-api-monitoring-lab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View project on GitHub →
+                </a>
+
+            </div>
+
+            <div class="architecture-card">
+
+                <p class="architecture-title">Monitoring Architecture</p>
+
+                <div class="architecture-flow">
+
+                    <div class="architecture-backends source-backends">
+                        <div>
+                            <strong>NASA NeoWs</strong>
+                            <small>NEAR-EARTH OBJECTS</small>
+                        </div>
+                        <div>
+                            <strong>JPL Sentry</strong>
+                            <small>IMPACT SCENARIOS</small>
+                        </div>
+                    </div>
+
+                    <span>↓ HTTPS / JSON</span>
+
+                    <div class="architecture-node">
+                        FastAPI Monitoring Service
+                        <small>OPENSHIFT BUILD · DEPLOYMENT · POD</small>
+                    </div>
+
+                    <span>↓ SERVICE · SECURE ROUTE · HEALTH PROBES</span>
+
+                    <span>↓ OTLP</span>
+
+                    <div class="architecture-node architecture-highlight">
+                        OpenTelemetry Collector
+                    </div>
+
+                    <span>↓</span>
+
+                    <div class="architecture-backends">
+                        <div><strong>Prometheus</strong><small>METRICS</small></div>
+                        <div><strong>Loki</strong><small>LOGS</small></div>
+                        <div><strong>Tempo</strong><small>TRACES</small></div>
+                    </div>
+
+                    <span>↓</span>
+
+                    <div class="architecture-node grafana-node">
+                        Grafana
+                        <small>ASTEROID MONITORING &amp; INVESTIGATION</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="monitoring-preview" aria-label="NASA NEO monitoring coverage">
+
+            <div class="monitoring-preview-header">
+                <div>
+                    <span>MONITORING COVERAGE</span>
+                    <strong>Near-Earth Object Intelligence</strong>
+                </div>
+                <span class="monitoring-status">● TELEMETRY ACTIVE</span>
+            </div>
+
+            <div class="monitoring-metrics">
+                <article>
+                    <span>VELOCITY</span><strong>km/h</strong>
+                    <small>Relative speed by object</small>
+                </article>
+                <article>
+                    <span>DIAMETER</span><strong>meters</strong>
+                    <small>Estimated minimum and maximum</small>
+                </article>
+                <article>
+                    <span>EARTH DISTANCE</span><strong>km · LD</strong>
+                    <small>Kilometres and lunar distance</small>
+                </article>
+                <article>
+                    <span>SENTRY RISK</span><strong>probability</strong>
+                    <small>Potential dates and risk scales</small>
+                </article>
+            </div>
+
+            <div class="platform-strip">
+                <span>BUILDCONFIG</span>
+                <span>DEPLOYMENT</span>
+                <span>POD</span>
+                <span>SERVICE</span>
+                <span>ROUTE</span>
+                <span>SECRET</span>
+                <span>PROBES</span>
+            </div>
+
+            <p class="monitoring-note">
+                Close approach does not mean impact. Sentry data represents
+                probabilistic scenarios published by NASA/JPL.
+            </p>
+
+        </div>
+
     </div>
 
 </section>
